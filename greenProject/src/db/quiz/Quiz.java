@@ -9,6 +9,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Quiz {
+	public static void main(String[] args) {
+		Quiz q = new Quiz();
+		q.color();
+	}
+	
 	private Connection conn; // data base connection
 	private Statement stmt; // sql query 실행
 	private ResultSet rs; // query result
@@ -29,7 +34,7 @@ public class Quiz {
 		String[][] animalEx = { { "개", "개", "개" }, { "고양이", "고양이", "고양이" }, { "말", "말", "말" }, { "사자", "사자", "사자" },
 				{ "코끼리", "코끼리", "코끼리" }, { "원숭이", "원숭이", "원숭이" }, { "곰", "곰", "곰" }, { "사슴", "사슴", "사슴" },
 				{ "돌고래", "돌고래", "돌고래" }, { "기린", "기린", "기린" } };
-
+		
 		aa: for (int i = 0; i < animal.length; i++) {
 
 			int score = 3;
@@ -382,9 +387,16 @@ public class Quiz {
 		List<String> colors = Arrays.asList(color);
 		Collections.shuffle(colors);
 
-		String[][] colorEx = { { "빨", "빨", "빨" }, { "주", "주", "주" }, { "노", "노", "노" }, { "초", "초", "초" },
+		String[][] colorEx = { { "딸기", "사과", "소화기","장미","루비" }, { "오렌지", "감", "당근" }, { "노", "노", "노" }, { "초", "초", "초" },
 				{ "파", "파", "파" }, { "남", "남", "남" }, { "보", "보", "보" }, { "흰", "흰", "흰" }, { "검", "검", "검" },
 				{ "회", "회", "회" } };
+		
+		for(int i = 0; i < color.length;i++) {
+			for(int j = 0; j < colorEx[i].length;j++) {
+				List<String> colorsEx = Arrays.asList(colorEx[i]);
+				Collections.shuffle(colorsEx);
+			}
+		}
 
 		aa: for (int i = 0; i < color.length; i++) {
 
